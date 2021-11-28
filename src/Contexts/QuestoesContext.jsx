@@ -9,9 +9,13 @@ export function QuestoesProvider({ children }) {
 
     async function getQuestions() {
         const questoes = await api.get(`api.php?amount=${numeroQuestoes}`);
-        setQuestoes(questoes.data.results);
-    }
+        const questionsWithId = [];
+        questoes.data.results.map((questao) => {
+            return questionsWithId.push({ id: (Math.random() * (numeroQuestoes)), ...questao });
 
+        })
+        setQuestoes(questionsWithId);
+    }
     return (
         <QuestoesContext.Provider value={
             {

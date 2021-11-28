@@ -1,16 +1,15 @@
 .container {
-    background-color: var(--Blue);
-    position: sticky;
-    top: 0;
-    left: 0;
-    .container_wrapper{
-        display: flex;
-        justify-content:space-between;
-        align-items: center;
+    padding: 2rem 0;
+    .questoesWrap .questao{
+        p{
+            font: normal 2rem "Open-Sans", sans-serif;
+            margin-bottom: 10px;
+        }
         span{
-            color: var(--White);
-            font: Bold 2em 'Montserrat', sans-serif; 
-            text-transform: uppercase;
+            font: normal 1rem "Open-Sans", sans-serif !important;
+        }
+        & + .questao{
+           margin-top: 2rem; 
         }
     }
 }
