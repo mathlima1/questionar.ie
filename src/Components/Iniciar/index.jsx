@@ -4,6 +4,7 @@ import Container from '@mui/material/Container';
 import Button from '@mui/material/Button';
 import TextField from '@mui/material/TextField';
 
+import { Link } from 'react-router-dom'
 import { useContext } from 'react';
 import { QuestoesContext } from '../../Contexts/QuestoesContext';
 
@@ -29,7 +30,9 @@ export default function Iniciar() {
                         value={numeroQuestoes}
                         onChange={event => setNumeroQuestoes(event.target.value)}
                     />
-                    <Button variant="outlined" onClick={getQuestions}>Confirmar</Button>
+                    <Link to="confirmacao">
+                        <Button variant="outlined" onClick={getQuestions}>Confirmar</Button>
+                    </Link>
                 </div>
             </Container>
         </div >

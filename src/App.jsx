@@ -16,7 +16,7 @@ export default function App() {
         <Header />
         <Routes >
           <Route path="/questionario" element={<Questoes />} />
-          <Route path="/confimacao" element={<Confirmacao />} />
+          <Route path="/confirmacao" element={<Confirmacao />} />
           <Route exact path="/" element={<Iniciar />} />
         </Routes >
       </Router>
