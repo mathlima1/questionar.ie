@@ -4,6 +4,7 @@ import CssBaseline from '@mui/material/CssBaseline';
 import Header from './Components/Header'
 import Iniciar from './Components/Iniciar';
 import Confirmacao from './Components/Confirmacao';
+import Questoes from './Components/Questões/Questoes';
 
 import { QuestoesProvider } from './Contexts/QuestoesContext'
 export default function App() {
@@ -14,6 +15,7 @@ export default function App() {
         <Header />
         <Iniciar />
         <Confirmacao />
+        <Questoes />
       </>
     </QuestoesProvider>
   );
