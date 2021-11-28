@@ -1,12 +1,13 @@
 import style from './styles.module.scss';
+import { useContext } from 'react';
+import { QuestoesContext } from '../../Contexts/QuestoesContext';
+
 import Container from '@mui/material/Container';
 import Button from '@mui/material/Button';
 import ButtonGroup from '@mui/material/ButtonGroup';
 import RadioGroup from '@mui/material/RadioGroup';
 import FormControlLabel from '@mui/material/FormControlLabel';
 import Radio from '@mui/material/Radio';
-import { useContext } from 'react';
-import { QuestoesContext } from '../../Contexts/QuestoesContext';
 
 export default function Questoes() {
     const { Questoes } = useContext(QuestoesContext);
