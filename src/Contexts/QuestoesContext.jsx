@@ -7,6 +7,7 @@ export function QuestoesProvider({ children }) {
     const [numeroQuestoes, setNumeroQuestoes] = useState(0);
     const [Questoes, setQuestoes] = useState([]);
 
+
     async function getQuestions() {
         const questoes = await api.get(`api.php?amount=${numeroQuestoes}`);
         const questionsWithId = [];
@@ -16,13 +17,15 @@ export function QuestoesProvider({ children }) {
         })
         setQuestoes(questionsWithId);
     }
+    console.log(Questoes);
     return (
         <QuestoesContext.Provider value={
             {
+
                 Questoes,
                 numeroQuestoes,
                 setNumeroQuestoes,
-                getQuestions
+                getQuestions,
             }
         }
         >

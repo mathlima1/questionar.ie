@@ -1,0 +1,18 @@
+.container {
+    padding: 2rem 0;
+    .questao{
+        p{
+            font: normal 2rem "Open-Sans", sans-serif;
+            margin-bottom: 10px;
+        }
+        span{
+            font: normal 1rem "Open-Sans", sans-serif !important;
+        }
+        & + .questao{
+           margin-top: 2rem; 
+        }
+        .result p{
+            color: green;
+        }
+    }
+}
