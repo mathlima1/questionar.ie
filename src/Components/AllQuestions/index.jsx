@@ -9,14 +9,15 @@ import Container from '@mui/material/Container';
 import Button from '@mui/material/Button';
 
 export default function AllQuestions() {
-    const { Questoes } = useContext(QuestoesContext);
+    const { Questoes, numeroQuestoes } = useContext(QuestoesContext);
     const [isSubmited, setIsSubmited] = useState(localStorage.getItem("Relatorio") || false);
 
     const handleSubmit = (event) => {
         event.preventDefault();
         setIsSubmited(true);
         localStorage.setItem("Questões", JSON.stringify(Questoes));
-        localStorage.setItem("Relatorio", isSubmited);
+        localStorage.setItem("Relatorio", "True");
+        localStorage.setItem("NumberQuestions", numeroQuestoes);
     };
 
     return (

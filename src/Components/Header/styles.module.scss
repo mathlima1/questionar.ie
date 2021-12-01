@@ -8,6 +8,7 @@
         display: flex;
         justify-content:space-between;
         align-items: center;
+        flex-wrap: wrap;
         span{
             color: var(--White);
             font: Bold 2em 'Montserrat', sans-serif; 
@@ -22,6 +23,14 @@
                 background-color: var(--White);
                 color: var(--Blue);
             }
+        }
+    }
+}
+@media screen and (max-width:560px){
+    .container .container_wrapper{
+        justify-content: center;
+        .button{
+            font-size: 1.2em;
         }
     }
 }

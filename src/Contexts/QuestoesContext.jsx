@@ -8,11 +8,13 @@ export function QuestoesProvider({ children }) {
     const [numeroQuestoes, setNumeroQuestoes] = useState(0);
     const [Questoes, setQuestoes] = useState([]);
     let storedQuestions = localStorage.getItem("Questões");
+    let storedNumberQuestions = localStorage.getItem("NumberQuestions");
     const storedQuestionsParsed = JSON.parse(storedQuestions);
 
 
     useEffect(() => {
         setQuestoes(storedQuestionsParsed);
+        setNumeroQuestoes(storedNumberQuestions);
     }, [])
 
     async function getQuestions() {
