@@ -13,5 +13,15 @@
             font: Bold 2em 'Montserrat', sans-serif; 
             text-transform: uppercase;
         }
+        .button{
+            font: Bold 1em 'Montserrat', sans-serif; 
+            color: var(--White);
+            border:2px solid var(--White);
+            transition: all 0.5s;
+            &:hover{
+                background-color: var(--White);
+                color: var(--Blue);
+            }
+        }
     }
 }

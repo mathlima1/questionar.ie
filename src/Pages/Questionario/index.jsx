@@ -15,8 +15,8 @@ import ButtonGroup from '@mui/material/ButtonGroup';
 
 
 export default function Questionario() {
-    const { Questoes, setNumeroQuestoes } = useContext(QuestoesContext);
-    if (Questoes.length === 0) {
+    const { setNumeroQuestoes, numeroQuestoes } = useContext(QuestoesContext);
+    if (numeroQuestoes === 0) {
         return (
             <>
                 <Header />

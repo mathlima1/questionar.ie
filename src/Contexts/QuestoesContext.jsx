@@ -1,14 +1,22 @@
 import api from '../services/api';
-import { createContext, useState } from 'react';
+import { createContext, useState, useEffect } from 'react';
+
 
 export const QuestoesContext = createContext();
 
 export function QuestoesProvider({ children }) {
     const [numeroQuestoes, setNumeroQuestoes] = useState(0);
     const [Questoes, setQuestoes] = useState([]);
+    let storedQuestions = localStorage.getItem("Questões");
+    const storedQuestionsParsed = JSON.parse(storedQuestions);
 
+
+    useEffect(() => {
+        setQuestoes(storedQuestionsParsed);
+    }, [])
 
     async function getQuestions() {
+        localStorage.clear();
         const questoes = await api.get(`api.php?amount=${numeroQuestoes}`);
         const questionsWithId = [];
         questoes.data.results.map((questao) => {
@@ -17,7 +25,6 @@ export function QuestoesProvider({ children }) {
         })
         setQuestoes(questionsWithId);
     }
-    console.log(Questoes);
     return (
         <QuestoesContext.Provider value={
             {

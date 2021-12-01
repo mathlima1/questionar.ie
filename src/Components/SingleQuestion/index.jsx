@@ -11,7 +11,7 @@ import FormHelperText from '@mui/material/FormHelperText';
 export default function SingleQuestion({ questao, questionarieSubmited }) {
 
     const [alternativas, setAlternativas] = useState([]);
-    const [value, setValue] = useState('');
+    const [value, setValue] = useState(localStorage.getItem(`MarkedQuestion${questao.id}`) || '');
     const [error, setError] = useState(false);
     const [helperText, setHelperText] = useState('');
 
@@ -32,12 +32,13 @@ export default function SingleQuestion({ questao, questionarieSubmited }) {
         setValue(event.target.value);
         setError(false);
     };
-
     function handleShowResult() {
         if (value === questao.correct_answer) {
+            localStorage.setItem(`MarkedQuestion${questao.id}`, value);
             setHelperText('Boa, Questão Correta');
             setError(false);
         } else {
+            localStorage.setItem(`MarkedQuestion${questao.id}`, value);
             setHelperText('Alternativa errada!');
             setError(true);
         }
