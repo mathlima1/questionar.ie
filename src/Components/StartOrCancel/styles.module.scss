@@ -6,3 +6,8 @@
         margin-bottom: 1.5rem;
     }
 }
+@media screen and (max-width:600px){
+    .container .title_wrap h1{
+        font-size:2.5rem
+    }
+}
