@@ -68,15 +68,16 @@ export default function SingleQuestion({ questao, questionarieSubmited }) {
                         >
                             {alternativas.map((answer) => {
                                 if (questionarieSubmited) {
-                                    return (<FormControlLabel disabled key={answer} value={answer} control={<Radio />} label={answer} />)
+                                    return (<FormControlLabel disabled key={answer} value={answer}
+                                        control={<Radio />} label={answer} className={answer === questao.correct_answer ? style.correctAnswer : ""} />)
                                 } else {
                                     return (<FormControlLabel key={answer} value={answer} control={<Radio />} label={answer} />)
 
                                 }
                             })}
                         </RadioGroup>
-                        <div className={style.result}>
-                            <FormHelperText>{helperText}</FormHelperText>
+                        <div className='result'>
+                            <FormHelperText className={error ? style.erro : style.acerto}>{helperText}</FormHelperText>
                         </div>
                     </FormControl>
                 </div>

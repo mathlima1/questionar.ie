@@ -11,8 +11,14 @@
         & + .questao{
            margin-top: 2rem; 
         }
-        .result p{
-            color: green;
+        .correctAnswer span{
+            color: rgb(53, 172, 53) !important;
+        }
+        .erro{
+            color: #d32f2f;
+        }
+        .acerto{
+            color: rgb(53, 172, 53);
         }
     }
 }
